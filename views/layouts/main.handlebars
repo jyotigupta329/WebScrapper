@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Scrape That Thing</title>
+
+    <!-- Materialize Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    <!-- CSS -->
+    {{!-- <link rel="stylesheet" type="text/css" href="/css/style.css" /> --}}
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <!-- JS -->
+    <script type="text/javascript" src="./app.js"></script>
+</head>
+
+<body>
+    <div class="bg">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Mongo Scraper</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li>
+                        <button id="viewSavedArticle">Saved Articles</button>
+                    </li>
+                    <li>
+                        <button id="scrape">Scrape New Articles</button>
+                    </li>
+                    <li>
+                        <button id="clear">Clear Articles</button>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col">
+                {{{ body }}}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

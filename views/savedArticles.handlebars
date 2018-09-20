@@ -1,0 +1,57 @@
+<style media="screen">
+    .card {
+        border: 1px solid rgb(233, 213, 213);
+        margin: 10px;
+        padding: 10px;
+    }
+
+    a {
+        margin-right: 5px;
+    }
+
+</style>
+<h1>News</h1>
+{{#if data.length}} {{#each data}}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p class="card-text">{{this.link}}</p>
+    </div>
+    <h5 class="card-action">
+        {{!-- <button id="deleteSavedArticle" data-id="{{this._id}}">Delete article</button> --}}
+        <a class="deleteSavedArticle waves-effect waves-light btn modal-trigger right" data-id="{{this._id}}">Delete article</a>
+        <!-- Modal for adding notes -->
+        <a class="addNote waves-effect waves-light btn modal-trigger right" href="#modal1" data-id="{{this._id}}">Add Notes</a>
+    </h5>
+</div>
+{{/each}}
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-header right">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">X</a>
+    </div>
+    <div class="modal-content">
+        <div id="comments-list">
+            <h5>Comments:</h5>
+            <ul>
+                {{#each Data}}
+                <li>{{Data.body}}</li>
+                {{/each}}
+            </ul>
+            <hr>
+        </div>
+        <h5>Add a comment...</h5>
+        <textarea id="new-comment-field"></textarea>
+    </div>
+    <div class="modal-footer">
+        <a class="saveNote modal-close waves-effect waves-green btn add-comment-btn" data-id="{{this.id}}">Add</a>
+    </div>
+</div>
+
+{{else}}
+<h3>No records found.</h3>
+{{/if}}
+
+<script type="text/javascript" src="./app.js"></script>
