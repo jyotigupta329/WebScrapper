@@ -14,26 +14,18 @@
     }
 </style>
 <h1>News</h1>
-{{#if data.length}} {{#each data}} {{!--
-<p>{{this.title}}</p>
-<p>{{this.link}}</p> --}}
+{{#if data.length}} {{#each data}}
+    <div class="card">
 
-<div class="card">
-
-    <div class="card-body">
-        <h5 class="card-title">{{this.title}}</h5>
-        <p class="card-text">{{this.link}}</p>
+        <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <p class="card-text">{{this.link}}</p>
+        </div>
+        <h5 class="card-footer">
+            <button id="saveArticle" data-id="{{this._id}}">save article</button>
+        </h5>
     </div>
-    <h5 class="card-footer">
-        <button id="saveArticle" data-id="{{this._id}}">save article</button>
-        {{!--
-        <button class="comment" data-id="{{this._id}}">Comment</button> --}}
-    </h5>
-</div>
 
 {{/each}} {{else}}
-<h3>No records found.</h3>
-
+    <h3>No records found.</h3>
 {{/if}}
-
-<script type="text/javascript" src="./app.js"></script>
